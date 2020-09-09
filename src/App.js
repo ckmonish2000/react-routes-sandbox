@@ -11,11 +11,22 @@ function App() {
     <Router>
       <div className="App">
         <Nav />
-        <Route path="/about" component={About} />
-        <Route path="/shop" component={Shop} />
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/about" component={About} />
+          <Route path="/shop" component={Shop} />
+        </Switch>
       </div>
     </Router>
   );
 }
 
 export default App;
+
+function Home() {
+  return (
+    <div>
+      <h1>we are at home</h1>
+    </div>
+  );
+}
